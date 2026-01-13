@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:hungry/core/constants/app_colors.dart';
 import 'package:hungry/features/checkout/widgets/order_details_widget.dart';
 import 'package:hungry/features/checkout/widgets/success_dialog.dart';
 import 'package:hungry/shared/custom_button.dart';
@@ -147,44 +146,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                   showDialog(
                     context: context,
                     builder: (v) {
-                      return Dialog(
-                        backgroundColor: Colors.transparent,
-                        child: Container(
-                          padding: EdgeInsets.all(12),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(28),
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.shade900,
-                                offset: Offset(0, 0),
-                                blurRadius: 15,
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              CircleAvatar(
-                                radius: 40,
-                                backgroundColor: AppColors.primary,
-                                child: Icon(
-                                  Icons.check,
-                                  color: Colors.white,
-                                  size: 38,
-                                ),
-                              ),
-                              Gap(10),
-                              CustomText(
-                                text: 'Sucesdsd',
-                                color: AppColors.primary,
-                              ),
-                              Gap(10),
-                              CustomText(text: 'ss'),
-                            ],
-                          ),
-                        ),
-                      );
+                      return SuccessDialog();
                     },
                   );
                 },
