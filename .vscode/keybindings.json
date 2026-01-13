@@ -1,0 +1,12 @@
+[
+  {
+    "key": "ctrl+alt+r",
+    "command": "flutter.hotReload",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+shift+r",
+    "command": "flutter.hotRestart",
+    "when": "editorTextFocus"
+  }
+]
