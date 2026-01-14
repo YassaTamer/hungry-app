@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:hungry/core/constants/app_colors.dart';
+import 'package:hungry/features/auth/views/signup_view.dart';
 import 'package:hungry/features/auth/widgets/custom_btn.dart';
+import 'package:hungry/root.dart';
 import 'package:hungry/shared/custom_text.dart';
 import 'package:hungry/shared/custom_textfield.dart';
 
@@ -50,10 +52,37 @@ class LoginView extends StatelessWidget {
                   CustomAuthBtn(
                     onTap: () {
                       if (formKey.currentState!.validate()) {
-                       // print('success login');
+                        // print('success login');
                       }
                     },
                     text: 'Login',
+                  ),
+                  Gap(20),
+                  CustomAuthBtn(
+                    color: Colors.transparent,
+                    textColor: Colors.white,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (c) => SignupView()),
+                      );
+                    },
+                    text: 'Go to sign up',
+                  ),
+
+                  Gap(20),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (c) => Root()),
+                      );
+                    },
+                    child: CustomText(
+                      text: 'Register as a gust!',
+                      size: 16,
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),

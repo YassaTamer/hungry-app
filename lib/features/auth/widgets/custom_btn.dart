@@ -3,16 +3,19 @@ import 'package:hungry/core/constants/app_colors.dart';
 import 'package:hungry/shared/custom_text.dart';
 
 class CustomAuthBtn extends StatelessWidget {
-  const CustomAuthBtn({super.key, this.onTap, required this.text});
+  const CustomAuthBtn({super.key, this.onTap, required this.text, this.color, this.textColor});
   final Function()? onTap;
   final String text;
+  final Color? color;
+  final Color? textColor;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          border: Border.all(color: Colors.white),
+          color: color ?? Colors.white,
           borderRadius: BorderRadius.circular(8),
         ),
         width: double.infinity,
@@ -22,7 +25,7 @@ class CustomAuthBtn extends StatelessWidget {
             text: text,
             weight: FontWeight.w500,
             size: 18,
-            color: AppColors.primary,
+            color:textColor?? AppColors.primary,
           ),
         ),
       ),
