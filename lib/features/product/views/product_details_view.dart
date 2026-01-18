@@ -82,21 +82,38 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                   }),
                 ),
               ),
-              Gap(24),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Gap(48),
+            ],
+          ),
+        ),
+      ),
+
+      bottomSheet: Container(
+        height: 120,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(28),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.shade900,
+              offset: Offset(0, 0),
+              blurRadius: 15,
+            ),
+          ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomText(text: 'Total', size: 22),
-                      CustomText(text: '\$18.8', size: 28),
-                    ],
-                  ),
-                  CustomButton(text: 'Add To Card'),
+                  CustomText(text: 'Total', size: 22),
+                  CustomText(text: '\$18.8', size: 28),
                 ],
               ),
-              Gap(48),
+              CustomButton(text: 'Add To Card'),
             ],
           ),
         ),
